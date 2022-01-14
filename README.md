@@ -35,3 +35,5 @@ Your default browser will automatically open and display the result.
 ![The result of passing the above checklist example to the Checklister.py script](demochecklistresult.png)
 
 You can either print the web page directly or save it as a PDF.  The 3x5in dimensions are hardcoded into the design.
+
+If you add the `--holes` argument, the page will include two guide circles for hole punches in the top left and top right corners.
