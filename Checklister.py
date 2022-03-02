@@ -93,6 +93,7 @@ def mdChecklistToHTML(md):
 ## Main logic: parse Markdown files and spit out web pages
 
 import argparse
+from os.path import expanduser
 from urllib.parse import quote
 import webbrowser
 
@@ -101,7 +102,7 @@ parser.add_argument('filename', metavar='File', type=str, help='A Markdown file 
 parser.add_argument('--holes', dest='holes', action='store_const', const=True, default=False, help='Add indicators for hole punches')
 args = parser.parse_args()
 
-with open(args.filename) as f:
+with open(expanduser(args.filename)) as f:
     html = mdChecklistToHTML(f.read())
     dataurl = "data:text/html," + quote(fill_template(html, args.holes))
     webbrowser.open_new(dataurl)
